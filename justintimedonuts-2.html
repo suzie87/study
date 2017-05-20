@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>Duncan's Just-in-time Donuts</title>
+    <script type="text/javascript">
+        function calPrice(){
+            const TAXTATE=0.05;
+            const DONUTSPRICE=0.5;
+            var numCakedonuts=parseInt(document.getElementById("cakedonuts").value);
+            var numGlazedDonuts=parseInt(document.getElementById("glazeddonuts").value);
+            var subtotal=(numCakedonuts+numGlazedDonuts)*DONUTSPRICE;
+            var tax=subtotal*TAXTATE;
+            var total=subtotal+tax;
+            document.getElementById("subtotal").value=subtotal;
+            document.getElementById("tax").value=tax;
+            document.getElementById("total").value=total;
+
+        }
+    </script>
+</head>
+<body>
+<div>
+<h1>Duncan's Just-in-time Donuts</h1>
+<span>All donuts 50 cents each,cake or glazed!</span>
+</div>
+<div>
+   <p>Name:<input type="text"></p>
+    <p>#of cake donuts:<input type="number" id="cakedonuts"></p>
+    <p>#of glazed donuts:<input type="number" id="glazeddonuts"></p>
+    <p>Minutes'till pickup:<input type="number"></p>
+    <p>Subtotal:<input type="number" id="subtotal"></p>
+    <p>Tax:<input type="number" id="tax"></p>
+    <p>Total:<input type="number" id="total"></p>
+</div>
+<div>
+    <button onclick="calPrice()">calculate</button>
+    <button>Place order</button>
+</div>
+</body>
+<html>
